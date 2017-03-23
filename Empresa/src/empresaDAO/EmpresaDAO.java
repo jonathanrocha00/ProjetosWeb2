@@ -24,8 +24,12 @@ public class EmpresaDAO {
 		
 		return true;
 	}
-	public boolean editarFuncionario() {
-		return false;
+	public boolean editarFuncionario(Funcionario f, String nome, double salario, Departamento d ) {
+		f.setNome(nome);
+		f.setSalario(salario);
+		f.setLotacao(d);
+		
+		return true;
 	}
 	
 	// Departamentos
@@ -39,23 +43,31 @@ public class EmpresaDAO {
 		
 		return true;
 	}
-	public boolean editarDepartamento() {
-		return false;
+	public boolean editarDepartamento(Departamento d, String nome, Chefe c) {
+		d.setNome(nome);
+		d.setChefe(c);
+		
+		return true;
 	}
 	
 	// Chefes
 	public boolean inserirChefe(Chefe c) {
-		// TODO
+		listaDeChefes.add(c);
 		
-		return false;
+		return true;
 	}
 	public boolean removerChefe(Chefe c) {
-		// TODO
+		listaDeChefes.remove(c);
 
-		return false;
+		return true;
 	}
-	public boolean editarChefe() {
-		return false;
+	public boolean editarChefe(Chefe c, String nome, double salario, Departamento d, Departamento dChefiado) {
+		c.setNome(nome);
+		c.setSalario(salario);
+		c.setLotacao(d);
+		c.setDpto(dChefiado);
+		
+		return true;
 	}
 	
 }
