@@ -67,15 +67,32 @@ public class main {
 		System.out.println("");
 		
 		System.out.println("####### Testando setChefe() #######");
+		System.out.println("##### E setDpto() por tabela ######");
 		d.setChefe(c);
 		d.print();
 		c.print();
 		c2.print();
+		c3.print();
 		d.setChefe(c2);
 		d.print();
 		c.print();
 		c2.print();
-		
+		c3.print();
+		d.setChefe(c3);
+		d.print();
+		c.print();
+		c2.print();
+		c3.print();
+		d.setChefe(c2);
+		d.print();
+		c.print();
+		c2.print();
+		c3.print();
+		d.setChefe(null);
+		d.print();
+		c.print();
+		c2.print();
+		c3.print();
 		
 		
 		

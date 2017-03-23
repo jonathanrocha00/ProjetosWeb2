@@ -47,7 +47,29 @@ public class Departamento {
 	}
 	public void setChefe(Chefe chefe) {
 		
-		// TODO
+		if (this.chefe == null && chefe == null) {
+			return;
+		}
+		else if (this.chefe == null && chefe != null){
+			this.chefe = chefe;
+			this.chefe.setDpto(this);
+		}
+		else if (this.chefe != null && chefe != null){
+			
+			if (this.chefe == chefe) {
+				return;
+			}
+			else {
+				this.chefe.setDpto(null);
+				this.chefe = chefe;
+				this.chefe.setDpto(this);
+			}
+		}
+		else if (this.chefe != null && chefe == null){
+			Chefe aux = this.chefe;
+			this.chefe = null;
+			aux.setDpto(null);
+		}
 	}
 	
 	// Para debugar
