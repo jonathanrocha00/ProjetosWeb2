@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<head>
+<title>Avaliado</title>
+
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+<h:body>
+
+	<h1>Home professor</h1>
+
+	<h2>Bem vindo #{homeProfessorMB.nomeDoProfessorLogado}</h2>
+
+	<h:form>
+		<h:commandButton value="Avaliar disciplinas" action="#{homeProfessorMB.avaliarDisciplinas}" />
+		<h:commandButton value="Avaliar cursos" action="#{homeProfessorMB.avaliarCursos}" />
+		<h:commandButton value="Avaliar universidades" action="#{homeProfessorMB.avaliarUniversidades}" />
+		<h:commandButton value="Log out" action="#{homeProfessorMB.logout}" />
+	</h:form>
+</h:body>
+
+</html>

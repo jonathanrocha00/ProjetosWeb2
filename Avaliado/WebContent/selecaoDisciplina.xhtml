@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<head>
+<title>Avaliado</title>
+
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+<h:body>
+
+	<h1>Selecao de disciplinas</h1>
+	
+	<h:dataTable value="#{selecaoMB.disciplinas}" var="o">
+
+		<h:column>
+			<f:facet name="header">ID</f:facet>
+			<p>#{o.id}</p>
+		</h:column>
+
+		<h:column>
+			<f:facet name="header">Nome</f:facet>
+			<p>#{o.nome}</p>
+		</h:column>
+
+	</h:dataTable>
+	
+	<h2>Qual discplina deseja avaliar?</h2>
+	
+	<h:form>
+		<h:inputText value="#{selecaoMB.idDoItemSendoAvaliado}" />
+	
+		<h:commandButton value="Avaliar" action="#{selecaoMB.avaliarDisciplina}"/>
+		<h:commandButton value="Voltar" action="#{selecaoMB.voltar}"/>
+	</h:form>
+	
+</h:body>
+
+</html>
