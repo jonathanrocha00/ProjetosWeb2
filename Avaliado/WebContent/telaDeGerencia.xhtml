@@ -7,6 +7,7 @@
 <head>
 <title>Avaliado</title>
 
+<link rel="icon" type="image/png" href="image/icon.png" />
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
 <h:body>
@@ -14,12 +15,12 @@
 	<h1>Tela de gerencia</h1>
 
 	<h:form>
-		<h:commandButton value="Gerenciar alunos" />
-		<h:commandButton value="Gerenciar professores" />
-		<h:commandButton value="Gerenciar disciplinas" />
-		<h:commandButton value="Gerenciar cursos" />
-		<h:commandButton value="Gerenciar universidades" />
-		<h:commandButton value="Voltar" action="#{telaDeGerenciaMB.voltar}"/>
+		<h:commandButton class="buttons" value="Gerenciar alunos" action="cadastroAluno"/>
+		<h:commandButton class="buttons" value="Gerenciar professores" action="cadastroProfessor"/>
+		<h:commandButton class="buttons" value="Gerenciar disciplinas" action="cadastroDisciplina"/>
+		<h:commandButton class="buttons" value="Gerenciar cursos" action="cadastroCurso"/>
+		<h:commandButton class="buttons" value="Gerenciar universidades" action="cadastroUniversidade"/>
+		<h:commandButton class="buttons-red" value="Voltar" action="#{telaDeGerenciaMB.voltar}"/>
 	</h:form>
 </h:body>
 

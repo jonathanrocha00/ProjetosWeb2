@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+      
+<head>
+	<title>Gerenciamento de alunos</title>
+	
+	<link rel="icon" type="image/png" href="image/icon.png" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+
+<body>
+
+	<h1>Gerenciamento de alunos</h1>
+
+	<h:form>
+		<p>Nome</p>
+		<h:inputText class="inputTexts" value="#{cadastrarAlunoMBean.aluno.nome}"></h:inputText>
+		<p>Instituicao</p>
+		<h:inputText class="inputTexts" value="#{cadastrarAlunoMBean.aluno.instituicao}"></h:inputText>
+		<p>Periodo</p>
+		<h:inputText class="inputTexts" value="#{cadastrarAlunoMBean.aluno.periodo}"></h:inputText>
+
+		<h:commandButton class="buttons" value="Cadastrar" action="#{cadastrarAlunoMBean.cadastrar}" />
+		
+	</h:form>
+
+	<h:dataTable value="#{cadastrarAlunoMBean.alunosLista}" var="listaAluno">
+
+		<h:column>
+			<f:facet name="header">ID</f:facet>
+    				#{listaAluno.id}
+    	</h:column>
+    	
+    	<h:column>
+			<f:facet name="header">Nome</f:facet>
+    				#{listaAluno.nome}
+    	</h:column>
+  
+    	<h:column>
+			<f:facet name="header">Instituicao</f:facet>
+    				#{listaAluno.instituicao}
+    	</h:column>
+    	
+    	<h:column>
+			<f:facet name="header">Periodo</f:facet>
+    				#{listaAluno.periodo}
+    	</h:column>
+
+	</h:dataTable>
+	
+	<h:form>
+		<p>ID</p>
+		<h:inputText class="inputTexts" value="#{cadastrarAlunoMBean.idADeletar}"></h:inputText>
+
+		<h:commandButton class="buttons" value="Deletar" action="#{cadastrarAlunoMBean.deletar}" />
+		<h:commandButton class="buttons-red" value="Voltar" action="telaDeGerencia" />
+	</h:form>
+
+</body>
+      
+</html>

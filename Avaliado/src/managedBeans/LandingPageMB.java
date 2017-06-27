@@ -29,23 +29,56 @@ public class LandingPageMB {
 		return "telaDeGerencia";
 	}
 	
-	public String logarComoAluno() {
+	public String logarComoAlunoVictor() {
 		
 		Aluno aluno = new Aluno();
 		aluno.setNome("Victor");
-		aluno.setPeriodo(4);
-		aluno.setInstituicao("Universidade Federal do RN");
+		
+		loginEjb.setPessoaLogada(aluno);
+		
+		return "homeAluno";
+	}
+	public String logarComoAlunaTeresa() {
+		
+		Aluno aluno = new Aluno();
+		aluno.setNome("Teresa");
+		
+		loginEjb.setPessoaLogada(aluno);
+		
+		return "homeAluno";
+	}
+	public String logarComoAlunaClare() {
+	
+		Aluno aluno = new Aluno();
+		aluno.setNome("Clare");
 		
 		loginEjb.setPessoaLogada(aluno);
 		
 		return "homeAluno";
 	}
 
-	public String logarComoProfessor() {
+	public String logarComoProfessoraPaula() {
 		
 		Professor professor = new Professor();
 		professor.setNome("Paula");
-		professor.setInstituicao("Universidade Federal do RN");
+		
+		loginEjb.setPessoaLogada(professor);
+		
+		return "homeProfessor";
+	}
+	public String logarComoProfessoraMaria() {
+		
+		Professor professor = new Professor();
+		professor.setNome("Maria");
+		
+		loginEjb.setPessoaLogada(professor);
+		
+		return "homeProfessor";
+	}
+	public String logarComoProfessorJoao() {
+		
+		Professor professor = new Professor();
+		professor.setNome("Joao");
 		
 		loginEjb.setPessoaLogada(professor);
 		

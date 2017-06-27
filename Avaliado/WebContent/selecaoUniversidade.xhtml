@@ -7,6 +7,7 @@
 <head>
 <title>Avaliado</title>
 
+<link rel="icon" type="image/png" href="image/icon.png" />
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
 <h:body>
@@ -24,16 +25,26 @@
 			<f:facet name="header">Nome</f:facet>
 			<p>#{o.nome}</p>
 		</h:column>
+		
+		<h:column>
+			<f:facet name="header">Sigla</f:facet>
+			<p>#{o.sigla}</p>
+		</h:column>
+		
+		<h:column>
+			<f:facet name="header">Endereco</f:facet>
+			<p>#{o.endereco}</p>
+		</h:column>
 
 	</h:dataTable>
 	
 	<h2>Qual universidade deseja avaliar?</h2>
 	
 	<h:form>
-		<h:inputText value="#{selecaoMB.idDoItemSendoAvaliado}" />
+		<h:inputText class="inputTexts" value="#{selecaoMB.idDoItemSendoAvaliado}" />
 		
-		<h:commandButton value="Avaliar" action="#{selecaoMB.avaliarUniversidade}"/>
-		<h:commandButton value="Voltar" action="#{selecaoMB.voltar}"/>
+		<h:commandButton class="buttons" value="Avaliar" action="#{selecaoMB.avaliarUniversidade}"/>
+		<h:commandButton class="buttons-red" value="Voltar" action="#{selecaoMB.voltar}"/>
 	</h:form>
 	
 </h:body>

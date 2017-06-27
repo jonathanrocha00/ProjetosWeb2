@@ -2,7 +2,8 @@ package modelo;
 
 import java.util.ArrayList;
 
-public class Professor extends Pessoa{
+//@Entity
+public class Professor extends Pessoa  implements ItemAvaliavel {
 
 	private ArrayList<String> criterios;
 

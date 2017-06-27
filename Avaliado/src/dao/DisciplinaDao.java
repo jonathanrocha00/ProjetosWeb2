@@ -15,13 +15,19 @@ public class DisciplinaDao {
 		listaDisciplinas = new ArrayList<Disciplina>();
 		
 		Disciplina disciplina1 = new Disciplina();
-		disciplina1.setNome("Web II");
+		disciplina1.setNome("ITP");
+		disciplina1.setProfessor("Tiago");
+		disciplina1.setPeriodo(1);
 		
 		Disciplina disciplina2 = new Disciplina();
 		disciplina2.setNome("LP II");
+		disciplina2.setProfessor("Larissa");
+		disciplina2.setPeriodo(3);
 		
 		Disciplina disciplina3 = new Disciplina();
 		disciplina3.setNome("FMC");
+		disciplina3.setProfessor("Satanas");
+		disciplina3.setPeriodo(4);
 		
 		listaDisciplinas.add(disciplina1);
 		listaDisciplinas.add(disciplina2);
@@ -30,6 +36,16 @@ public class DisciplinaDao {
 	
 	public ArrayList<Disciplina> getAll() {
 		return listaDisciplinas;
+	}
+	
+	public Disciplina search(int id) {
+		for (Disciplina disciplina : listaDisciplinas) {
+			if (disciplina.getId() == id) {
+				return disciplina;
+			}
+		}
+		
+		return null;
 	}
 	
 	public boolean inserir(Disciplina novaDisciplina) {

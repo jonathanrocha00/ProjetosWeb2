@@ -7,17 +7,32 @@
 <head>
 <title>Avaliado</title>
 
+<link rel="icon" type="image/png" href="image/icon.png" />
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
 <h:body>
 
 	<h1>Avaliacao de professor</h1>
 	
-	<h2>Voce esta avaliando o professor #{avaliacaoMB.nomeDoProfessorSendoAvaliado}</h2>
+	<h2>Voce esta avaliando o(a) professor(a) #{avaliacaoMB.nomeDoItemSendoAvaliado}</h2>
 
 	<h:form>
-		<h:commandButton value="Salvar" action="#{avaliacaoMB.consolidarAvaliacao}" />
-		<h:commandButton value="Voltar" action="#{avaliacaoMB.logout}" />
+	
+		<h3>Como você avalia os seguintes critérios? (0 a 10)</h3>
+		<p>#{avaliacaoMB.criterio1}</p>
+		<h:inputText class="inputTexts" value="#{avaliacaoMB.notaCriterio1}" />
+		
+		<p>#{avaliacaoMB.criterio2}</p>
+		<h:inputText class="inputTexts" value="#{avaliacaoMB.notaCriterio2}" />
+		
+		<p>#{avaliacaoMB.criterio3}</p>
+		<h:inputText class="inputTexts" value="#{avaliacaoMB.notaCriterio3}" />
+		
+		<h3>Gostaria de deixar algum comentario?</h3>
+		<h:inputTextarea class="inputTexts" cols="40" rows="10" value="#{avaliacaoMB.comentario}" />
+	
+		<h:commandButton class="buttons" value="Salvar" action="#{avaliacaoMB.consolidarAvaliacao}"/>
+		<h:commandButton class="buttons-red" value="Voltar" action="#{avaliacaoMB.voltarParaSelecaoProfessor}" />
 	</h:form>
 
 </h:body>

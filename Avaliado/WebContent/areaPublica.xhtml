@@ -7,14 +7,39 @@
 <head>
 <title>Avaliado</title>
 
+<link rel="icon" type="image/png" href="image/icon.png" />
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
 <h:body>
 
 	<h1>Area publica</h1>
 
+	<h:dataTable value="#{areaPublicaMB.todasAsAvaliacoes}" var="o">
+
+		<h:column>
+			<f:facet name="header">Feita por</f:facet>
+			<p>#{o.usuarioQueAvaliou.nome}</p>
+		</h:column>
+
+		<h:column>
+			<f:facet name="header">Sobre</f:facet>
+			<p>#{o.itemAvaliado.nome}</p>
+		</h:column>
+
+		<h:column>
+			<f:facet name="header">Notas</f:facet>
+			<p>#{o.itemAvaliado.criterios.get(0)}: #{o.nota1} <br/> #{o.itemAvaliado.criterios.get(1)}:#{o.nota2} <br/> #{o.itemAvaliado.criterios.get(2)}:#{o.nota3}</p>
+		</h:column>
+		
+		<h:column>
+			<f:facet name="header">Comentario</f:facet>
+			<p>#{o.comentario}</p>
+		</h:column>
+
+	</h:dataTable>
+
 	<h:form>
-		<h:commandButton value="Voltar" action="#{areaPublicaMB.voltar}"/>
+		<h:commandButton class="buttons-red" value="Voltar" action="#{areaPublicaMB.voltar}"/>
 	</h:form>
 
 </h:body>

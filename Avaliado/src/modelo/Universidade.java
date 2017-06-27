@@ -2,8 +2,13 @@ package modelo;
 
 import java.util.ArrayList;
 
-public class Universidade {
+//import javax.persistence.Entity;
+
+// @Entity
+public class Universidade implements ItemAvaliavel {
 	
+	// @Id
+	// @GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	private String nome;
 	private String sigla;
@@ -46,6 +51,13 @@ public class Universidade {
 	public void setId(int id) {
 		this.id = id;
 	}
-	
+	public ArrayList<String> getCriterios() {
+		return criterios;
+	}
+
+	public void setCriterios(ArrayList<String> criterios) {
+		this.criterios = criterios;
+	}
+
 	
 }

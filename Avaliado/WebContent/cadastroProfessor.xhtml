@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+      
+<head>
+	<title>Gerenciamento de professores</title>
+	
+	<link rel="icon" type="image/png" href="image/icon.png" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+
+<body>
+
+	<h1>Gerenciamento de professores</h1>
+
+	<h:form>
+		<p>Nome</p>
+		<h:inputText class="inputTexts" value="#{cadastrarProfessorMBean.professor.nome}"></h:inputText>
+		<p>Instituicao</p>
+		<h:inputText class="inputTexts" value="#{cadastrarProfessorMBean.professor.instituicao}"></h:inputText>
+		
+		<h:commandButton class="buttons" value="Cadastrar" action="#{cadastrarProfessorMBean.cadastrar}" />
+		
+	</h:form>
+
+	<h:dataTable value="#{cadastrarProfessorMBean.professoresLista}"
+		var="professorLista">
+		
+		<h:column>
+			<f:facet name="header">ID</f:facet>
+    				#{professorLista.id}
+    	</h:column>
+
+		<h:column>
+			<f:facet name="header">Nome</f:facet>
+    				#{professorLista.nome}
+    	</h:column>
+
+		<h:column>
+			<f:facet name="header">Instituicao</f:facet>
+    				#{professorLista.instituicao}
+    	</h:column>
+
+	</h:dataTable>
+	
+	<h:form>
+		<p>ID</p>
+		<h:inputText class="inputTexts" value="#{cadastrarProfessorMBean.idADeletar}"></h:inputText>
+		<h:commandButton class="buttons" value="Deletar" action="#{cadastrarProfessorMBean.deletar}" />
+		<h:commandButton class="buttons-red" value="Voltar" action="telaDeGerencia" />
+	</h:form>
+
+</body>
+      
+</html>

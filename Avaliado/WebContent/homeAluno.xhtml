@@ -13,14 +13,36 @@
 
 	<h1>Home aluno</h1>
 	
-	<h2>Bem vindo #{homeAlunoMB.nomeDoAlunoLogado}</h2>
+	<h2>Bem vindo(a) #{homeAlunoMB.nomeDoAlunoLogado}</h2>
+	
+	<h2>#{homeAlunoMB.informacoesDoAluno}</h2>
+	
+	<h2>Avaliacaoes feitas</h2>
+	<h:dataTable value="#{homeAlunoMB.avaliacoesFeitasPelaPessoaLogada}" var="o">
 
+		<h:column>
+			<f:facet name="header">Sobre</f:facet>
+			<p>#{o.itemAvaliado.nome}</p>
+		</h:column>
+
+		<h:column>
+			<f:facet name="header">Notas</f:facet>
+			<p>#{o.itemAvaliado.criterios.get(0)}: #{o.nota1} <br/> #{o.itemAvaliado.criterios.get(1)}:#{o.nota2} <br/> #{o.itemAvaliado.criterios.get(2)}:#{o.nota3}</p>
+		</h:column>
+		
+		<h:column>
+			<f:facet name="header">Comentario</f:facet>
+			<p>#{o.comentario}</p>
+		</h:column>
+
+	</h:dataTable>	
+	
 	<h:form>
-		<h:commandButton value="Avaliar professores" action="#{homeAlunoMB.avaliarProfessores}"/>
-		<h:commandButton value="Avaliar disciplinas" action="#{homeAlunoMB.avaliarDisciplinas}"/>
-		<h:commandButton value="Avaliar cursos" action="#{homeAlunoMB.avaliarCursos}"/>
-		<h:commandButton value="Avaliar universidades" action="#{homeAlunoMB.avaliarUniversidades}"/>
-		<h:commandButton value="Log out" action="#{homeAlunoMB.logout}"/>
+		<h:commandButton class="buttons" value="Avaliar professores" action="#{homeAlunoMB.avaliarProfessores}"/>
+		<h:commandButton class="buttons" value="Avaliar disciplinas" action="#{homeAlunoMB.avaliarDisciplinas}"/>
+		<h:commandButton class="buttons" value="Avaliar cursos" action="#{homeAlunoMB.avaliarCursos}"/>
+		<h:commandButton class="buttons" value="Avaliar universidades" action="#{homeAlunoMB.avaliarUniversidades}"/>
+		<h:commandButton class="buttons-red" value="Log out" action="#{homeAlunoMB.logout}"/>
 	</h:form>
 	
 </h:body>

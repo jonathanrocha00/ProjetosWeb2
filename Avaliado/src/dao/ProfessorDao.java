@@ -16,10 +16,15 @@ public class ProfessorDao {
 		
 		Professor professor1 = new Professor();
 		professor1.setNome("Joao");
+		professor1.setInstituicao("Universidade Federal do Rio Grande do Norte");
+		
 		Professor professor2 = new Professor();
 		professor2.setNome("Maria");
+		professor2.setInstituicao("Universidade Particular da vida");
+		
 		Professor professor3 = new Professor();
-		professor3.setNome("Joana");
+		professor3.setNome("Paula");
+		professor3.setInstituicao("Universidade Federal do Rio Grande do Norte");
 		
 		listaProfessores.add(professor1);
 		listaProfessores.add(professor2);
@@ -28,6 +33,16 @@ public class ProfessorDao {
 	
 	public ArrayList<Professor> getAll() {
 		return listaProfessores;
+	}
+	
+	public Professor search(int id) {
+		for (Professor professor : listaProfessores) {
+			if (professor.getId() == id) {
+				return professor;
+			}
+		}
+		
+		return null;
 	}
 	
 	public boolean inserir(Professor novoProfessor) {

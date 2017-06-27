@@ -7,17 +7,25 @@
 <head>
 <title>Avaliado</title>
 
+<link rel="icon" type="image/png" href="image/icon.png" />
 <link rel="stylesheet" type="text/css" href="css/style.css" />
+
 </head>
 <h:body>
 
 	<h1>Landing page</h1>
 
 	<h:form>
-		<h:commandButton value="Gerencia" action="#{landingPageMB.irParaTelaDeGerencia}" />
-		<h:commandButton value="Logar como aluno" action="#{landingPageMB.logarComoAluno}" />
-		<h:commandButton value="Logar como professor" action="#{landingPageMB.logarComoProfessor}" />
-		<h:commandButton value="Área pública" action="#{landingPageMB.irParaAreaPublica}" />
+		<h:commandButton class="buttons-red" value="Logar como aluno Victor" action="#{landingPageMB.logarComoAlunoVictor}" />
+		<h:commandButton class="buttons-red" value="Logar como aluna Teresa" action="#{landingPageMB.logarComoAlunaTeresa}" />
+		<h:commandButton class="buttons-red" value="Logar como aluna Clare" action="#{landingPageMB.logarComoAlunaClare}" />
+		
+		<h:commandButton class="buttons-blue" value="Logar como professora Paula" action="#{landingPageMB.logarComoProfessoraPaula}" />
+		<h:commandButton class="buttons-blue" value="Logar como professora Maria" action="#{landingPageMB.logarComoProfessoraMaria}" />
+		<h:commandButton class="buttons-blue" value="Logar como professor Joao" action="#{landingPageMB.logarComoProfessorJoao}" />
+		
+		<h:commandButton class="buttons" value="Gerencia" action="#{landingPageMB.irParaTelaDeGerencia}" />
+		<h:commandButton class="buttons" value="Area publica" action="#{landingPageMB.irParaAreaPublica}" />
 	</h:form>
 
 </h:body>

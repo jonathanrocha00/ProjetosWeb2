@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
 
 import dao.*;
@@ -13,6 +14,7 @@ import ejb.LoginEjb;
 import modelo.*;
 
 @ManagedBean
+@SessionScoped
 public class SelecaoMB {
 
 	@EJB
